@@ -3,8 +3,6 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/JackyyTV/NoAutoJump.svg)](https://github.com/JackyyTV/NoAutoJump/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/JackyyTV/NoAutoJump.svg)](https://github.com/JackyyTV/NoAutoJump/pulls) [![license](https://img.shields.io/github/license/JackyyTV/NoAutoJump.svg)](../dev-1.12.2/LICENSE)
 
-[![Logo](https://i.gyazo.com/00a2bbe43870bb032e19e1399fa72411.png)](https://minecraft.curseforge.com/projects/no-auto-jump)
-
 ---
 
 ## About
