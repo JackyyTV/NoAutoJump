@@ -1,17 +1,15 @@
 # NoAutoJump
-[![Downloads](http://cf.way2muchnoise.eu/full_no-auto-jump_downloads.svg)](https://minecraft.curseforge.com/projects/no-auto-jump) [![MCVersion](http://cf.way2muchnoise.eu/versions/no-auto-jump.svg)](https://minecraft.curseforge.com/projects/no-auto-jump)
+[![Downloads](http://cf.way2muchnoise.eu/full_282099_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/no-auto-jump) [![MCVersion](http://cf.way2muchnoise.eu/versions/282099.svg)](https://www.curseforge.com/minecraft/mc-mods/no-auto-jump)
 
-[![GitHub issues](https://img.shields.io/github/issues/JackyyTV/NoAutoJump.svg)](https://github.com/JackyyTV/NoAutoJump/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/JackyyTV/NoAutoJump.svg)](https://github.com/JackyyTV/NoAutoJump/pulls) [![license](https://img.shields.io/github/license/JackyyTV/NoAutoJump.svg)](../dev-1.12.2/LICENSE)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/JackyyTV/NoAutoJump.svg)](https://github.com/JackyyTV/NoAutoJump/pulls)
 
 ---
 
 ## About
 
-This is the GitHub repo for the No Auto Jump Minecraft mod, where the source code and issue tracker are in here.
+This is the GitHub repo for the No Auto Jump Minecraft mod, where the source code is stored.
 
-Submit any bug reports / suggestions via [issue tracker](https://github.com/JackyyTV/NoAutoJump/issues).
-
-[Pull requests](https://github.com/JackyyTV/NoAutoJump/pulls) are welcome if you would like to add features / help with bug fixes or translations.
+[Pull requests](https://github.com/JackyyTV/NoAutoJump/pulls) are welcome if you would like to add features / help with bug fixes.
 
 ---
 
