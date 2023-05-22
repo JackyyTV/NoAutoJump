@@ -74,7 +74,6 @@ repositories {
         name = 'ModMaven'
         url = 'https://modmaven.dev'
     }
-    /*
     maven {
         name = 'JEI Maven'
         url = 'https://dvs1.progwml6.com/files/maven'
@@ -82,7 +81,6 @@ repositories {
             includeGroup 'mezz.jei'
         }
     }
-    */
     maven {
         name = 'Curse Maven'
         url = 'https://www.cursemaven.com'
