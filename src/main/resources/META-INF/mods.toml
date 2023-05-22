@@ -1,12 +1,12 @@
 modLoader="javafml"
-loaderVersion="[24,)"
-issueTrackerURL="https://github.com/JackyyTV/NoAutoJump/issues"
-displayURL="https://github.com/JackyyTV/NoAutoJump"
+loaderVersion="[35,)"
+license="Jacky's Minecraft Mods License"
 
 [[mods]]
 modId="noautojump"
-version="1.13.2-1.0"
+version="1.16.5-1.0"
 displayName="No Auto Jump"
+displayURL="https://github.com/JackyyTV/NoAutoJump"
 authors="Jackyy"
 description='''
 Simply forces Auto-Jump to be disabled!
@@ -15,6 +15,12 @@ Simply forces Auto-Jump to be disabled!
 [[dependencies.noautojump]]
     modId="forge"
     mandatory=true
-    versionRange="[24,)"
+    versionRange="[35,)"
     ordering="NONE"
-    side="BOTH"
+    side="CLIENT"
+[[dependencies.noautojump]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16,1.17)"
+    ordering="NONE"
+    side="CLIENT"
