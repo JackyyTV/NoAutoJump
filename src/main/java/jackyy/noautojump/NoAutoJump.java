@@ -2,7 +2,7 @@ package jackyy.noautojump;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.CycleButton;
-import net.minecraft.client.gui.components.Widget;
+import net.minecraft.client.gui.components.Renderable;
 import net.minecraft.client.gui.screens.controls.ControlsScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraftforge.api.distmarker.Dist;
@@ -41,7 +41,7 @@ public class NoAutoJump {
     public void onInitGui(ScreenEvent.Init.Post event) {
         if (ModConfigs.CONFIG.enableMod.get()) {
             if (event.getScreen() instanceof ControlsScreen) {
-                for (Widget button : event.getScreen().renderables) {
+                for (Renderable button : event.getScreen().renderables) {
                     if (button instanceof CycleButton<?>) {
                         Component autoJumpOn = Component.translatable("options.generic_value", Component.translatable("options.autoJump"), Component.translatable("options.on"));
                         Component autoJumpOff = Component.translatable("options.generic_value", Component.translatable("options.autoJump"), Component.translatable("options.off"));
