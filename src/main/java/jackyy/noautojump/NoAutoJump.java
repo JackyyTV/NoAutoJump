@@ -4,7 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.CycleButton;
 import net.minecraft.client.gui.components.Widget;
 import net.minecraft.client.gui.screens.controls.ControlsScreen;
-import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.ScreenEvent;
@@ -32,19 +32,19 @@ public class NoAutoJump {
     public void onClientTick(TickEvent.ClientTickEvent event) {
         if (ModConfigs.CONFIG.enableMod.get()) {
             if (event.phase == TickEvent.Phase.END) {
-                Minecraft.getInstance().options.autoJump = false;
+                Minecraft.getInstance().options.autoJump().set(false);
             }
         }
     }
 
     @SubscribeEvent @OnlyIn(Dist.CLIENT)
-    public void onInitGui(ScreenEvent.InitScreenEvent.Post event) {
+    public void onInitGui(ScreenEvent.Init.Post event) {
         if (ModConfigs.CONFIG.enableMod.get()) {
             if (event.getScreen() instanceof ControlsScreen) {
                 for (Widget button : event.getScreen().renderables) {
                     if (button instanceof CycleButton<?>) {
-                        TranslatableComponent autoJumpOn = new TranslatableComponent("options.generic_value", new TranslatableComponent("options.autoJump"), new TranslatableComponent("options.on"));
-                        TranslatableComponent autoJumpOff = new TranslatableComponent("options.generic_value", new TranslatableComponent("options.autoJump"), new TranslatableComponent("options.off"));
+                        Component autoJumpOn = Component.translatable("options.generic_value", Component.translatable("options.autoJump"), Component.translatable("options.on"));
+                        Component autoJumpOff = Component.translatable("options.generic_value", Component.translatable("options.autoJump"), Component.translatable("options.off"));
                         if (((CycleButton<?>) button).getMessage().equals(autoJumpOn) || ((CycleButton<?>) button).getMessage().equals(autoJumpOff)) {
                             ((CycleButton<?>) button).active = false;
                         }
