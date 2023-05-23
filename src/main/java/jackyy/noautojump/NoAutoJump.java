@@ -2,6 +2,7 @@ package jackyy.noautojump;
 
 import net.minecraft.client.AbstractOption;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.AccessibilityScreen;
 import net.minecraft.client.gui.screen.ControlsScreen;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.gui.widget.button.OptionButton;
@@ -41,6 +42,12 @@ public class NoAutoJump {
     public void onInitGui(GuiScreenEvent.InitGuiEvent.Post event) {
         if (ModConfigs.CONFIG.enableMod.get()) {
             if (event.getGui() instanceof ControlsScreen) {
+                for (Widget button : event.getWidgetList()) {
+                    if (button instanceof OptionButton && ((OptionButton) button).getOptions() == AbstractOption.AUTO_JUMP) {
+                        button.active = false;
+                    }
+                }
+            } else if (event.getGui() instanceof AccessibilityScreen) {
                 for (Widget button : event.getWidgetList()) {
                     if (button instanceof OptionButton && ((OptionButton) button).getOptions() == AbstractOption.AUTO_JUMP) {
                         button.active = false;

@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[35,)"
+loaderVersion="[32,)"
 license="Jacky's Minecraft Mods License"
 
 [[mods]]
@@ -15,7 +15,7 @@ Simply forces Auto-Jump to be disabled!
 [[dependencies.noautojump]]
     modId="forge"
     mandatory=true
-    versionRange="[35,)"
+    versionRange="[32,)"
     ordering="NONE"
     side="CLIENT"
 [[dependencies.noautojump]]
