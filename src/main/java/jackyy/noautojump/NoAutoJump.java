@@ -1,14 +1,13 @@
 package jackyy.noautojump;
 
-import net.minecraft.client.AbstractOption;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.AccessibilityScreen;
-import net.minecraft.client.gui.screen.ControlsScreen;
-import net.minecraft.client.gui.widget.Widget;
-import net.minecraft.client.gui.widget.button.OptionButton;
+import net.minecraft.client.gui.components.CycleButton;
+import net.minecraft.client.gui.components.Widget;
+import net.minecraft.client.gui.screens.controls.ControlsScreen;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.GuiScreenEvent;
+import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
@@ -33,24 +32,22 @@ public class NoAutoJump {
     public void onClientTick(TickEvent.ClientTickEvent event) {
         if (ModConfigs.CONFIG.enableMod.get()) {
             if (event.phase == TickEvent.Phase.END) {
-                Minecraft.getInstance().gameSettings.autoJump = false;
+                Minecraft.getInstance().options.autoJump = false;
             }
         }
     }
 
     @SubscribeEvent @OnlyIn(Dist.CLIENT)
-    public void onInitGui(GuiScreenEvent.InitGuiEvent.Post event) {
+    public void onInitGui(ScreenEvent.InitScreenEvent.Post event) {
         if (ModConfigs.CONFIG.enableMod.get()) {
-            if (event.getGui() instanceof ControlsScreen) {
-                for (Widget button : event.getWidgetList()) {
-                    if (button instanceof OptionButton && ((OptionButton) button).getOptions() == AbstractOption.AUTO_JUMP) {
-                        button.active = false;
-                    }
-                }
-            } else if (event.getGui() instanceof AccessibilityScreen) {
-                for (Widget button : event.getWidgetList()) {
-                    if (button instanceof OptionButton && ((OptionButton) button).getOptions() == AbstractOption.AUTO_JUMP) {
-                        button.active = false;
+            if (event.getScreen() instanceof ControlsScreen) {
+                for (Widget button : event.getScreen().renderables) {
+                    if (button instanceof CycleButton<?>) {
+                        TranslatableComponent autoJumpOn = new TranslatableComponent("options.generic_value", new TranslatableComponent("options.autoJump"), new TranslatableComponent("options.on"));
+                        TranslatableComponent autoJumpOff = new TranslatableComponent("options.generic_value", new TranslatableComponent("options.autoJump"), new TranslatableComponent("options.off"));
+                        if (((CycleButton<?>) button).getMessage().equals(autoJumpOn) || ((CycleButton<?>) button).getMessage().equals(autoJumpOff)) {
+                            ((CycleButton<?>) button).active = false;
+                        }
                     }
                 }
             }
